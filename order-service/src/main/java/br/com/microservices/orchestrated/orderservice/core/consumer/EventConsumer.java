@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 public class EventConsumer {
 
-    //private final EventService service;
+    private final EventService service;
     private final JsonUtil jsonUtil;
 
     @KafkaListener(
@@ -22,7 +22,7 @@ public class EventConsumer {
     public void consumeNotifyEndingEvent(String payload) {
         log.info("Receiving ending notification event {} from notify-ending topic", payload);
         var event = jsonUtil.toEvent(payload);
-        //service.notifyEnding(event);
-        log.info(event.toString());
+        service.notifyEnding(event);
+
     }
 }
