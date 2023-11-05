@@ -1,6 +1,7 @@
 package br.com.microservices.orchestrated.orchestratorservice.core.enums;
 
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -21,6 +22,5 @@ public enum ETopics {
     NOTIFY_ENDING("notify-ending");
 
     private final String topic;
-
 
 }
